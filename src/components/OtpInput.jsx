@@ -27,7 +27,7 @@ const OtpInput = ({ length = 4, onOtpSubmit = () => {} }) => {
       onOtpSubmit(combinedOtp);
     }
 
-    // move to next input if digit entered
+    // move to next empty input if digit entered
     if (value && index < length - 1 && inputRefs.current[index + 1]) {
       inputRefs.current[index + 1].focus();
     }
@@ -35,6 +35,11 @@ const OtpInput = ({ length = 4, onOtpSubmit = () => {} }) => {
 
   const handleClick = (index) => {
     inputRefs.current[index].setSelectionRange(1, 1);
+
+    // move to previous input if clicked on filled input
+    if (index > 0 && !otp[index - 1]) {
+      inputRefs.current[otp.indexOf("")].focus();
+    }
   };
 
   const handleKeyDown = (index, e) => {
