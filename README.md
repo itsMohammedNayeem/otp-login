@@ -55,3 +55,9 @@ This component is responsible for rendering the OTP input. It also handles the l
 
 This application uses [Tailwind CSS](https://tailwindcss.com/) for styling. The styles are defined in the `tailwind.config.js` file.
 
+
+![Screenshot 2024-01-18 at 3 03 51 PM](https://github.com/itsMohammedNayeem/otp-login/assets/127741549/62955e7e-9414-4778-8ec6-0ee3e92cd2b7)
+
+![Screenshot 2024-01-18 at 3 03 24 PM](https://github.com/itsMohammedNayeem/otp-login/assets/127741549/31488188-f6a9-4487-944b-3963305c1798)
+
+![Screen Recording 2024-01-18 at 2 48 14 PM](https://github.com/itsMohammedNayeem/otp-login/assets/127741549/e914345a-9ba9-4b06-bb9c-ff9b76e5c6f6)
