@@ -26,10 +26,32 @@ const OtpInput = ({ length = 4, onOtpSubmit = () => {} }) => {
     if (combinedOtp.length === length) {
       onOtpSubmit(combinedOtp);
     }
+
+    // move to next input if digit entered
+    if (value && index < length - 1 && inputRefs.current[index + 1]) {
+      inputRefs.current[index + 1].focus();
+    }
   };
 
-  const handleClick = (e) => {};
-  const handleKeyDown = (index, e) => {};
+  const handleClick = (index) => {
+    inputRefs.current[index].setSelectionRange(1, 1);
+  };
+
+  const handleKeyDown = (index, e) => {
+    if (
+      e.key === "Backspace" &&
+      index > 0 &&
+      !otp[index] &&
+      inputRefs.current[index - 1]
+    ) {
+      const newOtp = [...otp];
+      newOtp[index - 1] = "";
+      setOtp(newOtp);
+
+      // move to previous input if backspace pressed
+      inputRefs.current[index - 1].focus();
+    }
+  };
 
   return (
     <div className="flex gap-2 items-center justify-center">
