@@ -69,7 +69,7 @@ const OtpInput = ({ length = 4, onOtpSubmit = () => {} }) => {
             value={value}
             onChange={(e) => handleChange(index, e)}
             onClick={() => handleClick(index)}
-            className="border border-black rounded-md p-2 w-10 text-center"
+            className="border border-gray-300 rounded-md p-2 w-10 text-center focus:outline-none focus:ring focus:border-blue-300"
             onKeyDown={(e) => handleKeyDown(index, e)}
           />
         );

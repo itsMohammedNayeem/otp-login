@@ -41,12 +41,13 @@ const PhoneOtpForm = () => {
         <form className="flex gap-4" onSubmit={handlePhoneSubmit}>
           <input
             type="text"
-            className="border-black border rounded-md p-2"
+            className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:border-blue-300"
+            placeholder="Enter your phone number"
             value={phoneNumber}
             onChange={handleChange}
           />
           <button
-            className="border border-black p-2 rounded-md hover:bg-slate-300 bg-slate-400"
+            className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
             type="submit"
           >
             Submit
@@ -54,7 +55,7 @@ const PhoneOtpForm = () => {
         </form>
       ) : (
         <div className="flex gap-4 flex-col">
-          <p>Enter OTP sent to {phoneNumber}</p>
+          <p className="text-lg">Enter OTP sent to {phoneNumber}</p>
           <OtpInput length={4} onOtpSubmit={onOtpSubmit} />
         </div>
       )}
